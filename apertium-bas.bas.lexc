@@ -31,8 +31,8 @@ Multichar_Symbols
 
 
 ! Number morphology
-%<n%>%<sg%>  ! Singulier
-%<n%>%<pl%>  ! Pluriel
+%<n%> %<sg%>  ! Singulier
+%<n%> %<pl%>  ! Pluriel
 
 ! Morphology persons
 
@@ -42,21 +42,30 @@ Multichar_Symbols
 
 
 ! Noun Classes
-%<n%>%<cl1%> ! Marqueur de classe 1
-%<n%>%<cl2%> ! Marqueur de classe 1
-%<n%>%<cl3%> ! Marqueur de classe 3
-%<n%>%<cl4%> ! Marqueur de classe 4
-%<n%>%<cl5%> ! Marqueur de classe 5
-%<n%>%<cl6%> ! Marqueur de classe 6
-%<n%>%<cl7%> ! Marqueur de classe 7
-%<n%>%<cl8%> ! Marqueur de classe 8
-%<n%>%<cl9%> ! Marqueur de classe 9
-%<n%>%<cl10%> ! Marqueur de classe 10
-%<n%>%<cl13%> ! Marqueur de classe 13
-%<n%>%<cl14%> ! Marqueur de classe 14
+%<n%> %<cl1%> ! Marqueur de classe 1
+%<n%> %<cl2%> ! Marqueur de classe 1
+%<n%> %<cl3%> ! Marqueur de classe 3
+%<n%> %<cl4%> ! Marqueur de classe 4
+%<n%> %<cl5%> ! Marqueur de classe 5
+%<n%> %<cl6%> ! Marqueur de classe 6
+%<n%> %<cl7%> ! Marqueur de classe 7
+%<n%> %<cl8%> ! Marqueur de classe 8
+%<n%> %<cl9%> ! Marqueur de classe 9
+%<n%> %<cl10%> ! Marqueur de classe 10
+%<n%> %<cl13%> ! Marqueur de classe 13
+%<n%> %<cl14%> ! Marqueur de classe 14
 
 ! Other symbols
 %>      ! Limite de morphème
+
+!! to move tags at the end
+
+@P.NTAG.ON@
+@R.NTAG.ON@
+@P.CL1.ON@
+@R.CL1.ON@
+@P.SG.ON@
+@R.SG.ON@
 
 LEXICON Root
 !! LEXICONS per class
@@ -77,13 +86,26 @@ PROPN ;
 CONN ;
 CNJCOO ;
 
+LEXICON ENDLEX_POS
+
+
+@R.NTAG.ON@%<n%>:@R.NTAG.ON@ ENDLEX_CL ;
+
+LEXICON ENDLEX_CL 
+
+@R.CL1.ON@%<cl1%>:@R.CL1.ON@ ENDLEX_NUM ;
+
+LEXICON ENDLEX_NUM
+
+@R.SG.ON@%<sg%>:@R.SG.ON@ # ;
+
 LEXICON NOUN
 
-%<n%>: NOUN_CL ;
+@P.NTAG.ON@ NOUN_CL ;
 
 LEXICON NOUN_CL
 
-%<cl1%>:0 NOUN_CL1 ;
+@P.CL1.ON@ NOUN_CL1 ;
 %<cl2%>:0 NOUN_CL2 ;
 %<cl3%>:0 NOUN_CL3 ;
 %<cl4%>:0 NOUN_CL4 ;
@@ -98,7 +120,7 @@ LEXICON NOUN_CL
 
 LEXICON NOUN_CL1
 
-%<sg%>:m NOUN_CL1_M ;
+@P.SG.ON@:@P.SG.ON@m NOUN_CL1_M ;
 %<sg%>:n NOUN_CL1_N ;
 %<sg%>:0 NOUN_CL1_ZERO ;
 
@@ -418,7 +440,7 @@ LEXICON NOUN_CL1_M
 
 ut # ; ! "person"
 an # ; ! "baby"
-aange # ; ! "child"
+aange ENDLEX_POS ; ! "child"
 udaa # ; ! "woman"
 alet # ; ! "teacher"
 
