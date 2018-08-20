@@ -64,8 +64,36 @@ Multichar_Symbols
 @R.NTAG.ON@
 @P.CL1.ON@
 @R.CL1.ON@
+@P.CL2.ON@
+@R.CL2.ON@
+@P.CL3.ON@
+@R.CL3.ON@
+@P.CL4.ON@
+@R.CL4.ON@
+@P.CL5.ON@
+@R.CL5.ON@
+@P.CL6.ON@
+@R.CL6.ON@
+@P.CL7.ON@
+@R.CL7.ON@
+@P.CL8.ON@
+@R.CL8.ON@
+@P.CL9.ON@
+@R.CL9.ON@
+@P.CLX.ON@
+@R.CLX.ON@
+@P.CL11.ON@
+@R.CL11.ON@
+@P.CL12.ON@
+@R.CL12.ON@
+@P.CL13.ON@
+@R.CL13.ON@
+@P.CL14.ON@
+@R.CL14.ON@
 @P.SG.ON@
 @R.SG.ON@
+@P.PL.ON@
+@R.PL.ON@
 
 LEXICON Root
 !! LEXICONS per class
@@ -88,16 +116,29 @@ CNJCOO ;
 
 LEXICON ENDLEX_POS
 
-
 @R.NTAG.ON@%<n%>:@R.NTAG.ON@ ENDLEX_CL ;
 
 LEXICON ENDLEX_CL 
 
 @R.CL1.ON@%<cl1%>:@R.CL1.ON@ ENDLEX_NUM ;
+@R.CL2.ON@%<cl2%>:@R.CL2.ON@ ENDLEX_NUM ;
+@R.CL3.ON@%<cl3%>:@R.CL3.ON@ ENDLEX_NUM ;
+@R.CL4.ON@%<cl4%>:@R.CL4.ON@ ENDLEX_NUM ;
+@R.CL5.ON@%<cl5%>:@R.CL5.ON@ ENDLEX_NUM ;
+@R.CL6.ON@%<cl6%>:@R.CL6.ON@ ENDLEX_NUM ;
+@R.CL7.ON@%<cl7%>:@R.CL7.ON@ ENDLEX_NUM ;
+@R.CL8.ON@%<cl8%>:@R.CL8.ON@ ENDLEX_NUM ;
+@R.CL9.ON@%<cl9%>:@R.CL9.ON@ ENDLEX_NUM ;
+@R.CLX.ON@%<cl10%>:@R.CLX.ON@ ENDLEX_NUM ;
+@R.CL11.ON@%<cl11%>:@R.CL11.ON@ ENDLEX_NUM ;
+@R.CL12.ON@%<cl11%>:@R.CL12.ON@ ENDLEX_NUM ;
+@R.CL13.ON@%<cl11%>:@R.CL13.ON@ ENDLEX_NUM ;
+@R.CL14.ON@%<cl11%>:@R.CL14.ON@ ENDLEX_NUM ;
 
 LEXICON ENDLEX_NUM
 
 @R.SG.ON@%<sg%>:@R.SG.ON@ # ;
+@R.PL.ON@%<pl%>:@R.PL.ON@ # ;
 
 LEXICON NOUN
 
@@ -106,73 +147,73 @@ LEXICON NOUN
 LEXICON NOUN_CL
 
 @P.CL1.ON@ NOUN_CL1 ;
-%<cl2%>:0 NOUN_CL2 ;
-%<cl3%>:0 NOUN_CL3 ;
-%<cl4%>:0 NOUN_CL4 ;
-%<cl5%>:0 NOUN_CL5 ;
-%<cl6%>:0 NOUN_CL6 ;
-%<cl7%>:0 NOUN_CL7 ;
-%<cl8%>:0 NOUN_CL8 ;
-%<cl9%>:0 NOUN_CL9 ;
-%<cl10%>:0 NOUN_CL10 ;
-%<cl13%>:0 NOUN_CL13 ;
-%<cl14%>:0 NOUN_CL14 ;
+@P.CL2.ON@ NOUN_CL2 ;
+@P.CL3.ON@ NOUN_CL3 ;
+@P.CL4.ON@ NOUN_CL4 ;
+@P.CL5.ON@ NOUN_CL5 ;
+@P.CL6.ON@ NOUN_CL6 ;
+@P.CL7.ON@ NOUN_CL7 ;
+@P.CL8.ON@ NOUN_CL8 ;
+@P.CL9.ON@ NOUN_CL9 ;
+@P.CLX.ON@ NOUN_CL10 ;
+@P.CL13.ON@ NOUN_CL13 ;
+@P.CL14.ON@ NOUN_CL14 ;
 
 LEXICON NOUN_CL1
 
 @P.SG.ON@:@P.SG.ON@m NOUN_CL1_M ;
-%<sg%>:n NOUN_CL1_N ;
-%<sg%>:0 NOUN_CL1_ZERO ;
+@P.SG.ON@:@P.SG.ON@n NOUN_CL1_N ;
+@P.SG.ON@:@P.SG.ON@  NOUN_CL1_ZERO ;
 
 LEXICON NOUN_CL2
 
-%<pl%>:ba NOUN_CL2_BA ;
-%<pl%>:b NOUN_CL2_B ;
+@P.PL.ON@:@P.PL.ON@ba NOUN_CL2_BA ;
+@P.PL.ON@:@P.PL.ON@b NOUN_CL2_B ;
 
 LEXICON NOUN_CL3
 
-%<sg%>:n NOUN_CL3_N ;
-%<sg%>:0 NOUN°CL3_ZERO ;
+@P.SG.ON@:@P.SG.ON@n NOUN_CL3_N ;
+@P.SG.ON@:@P.SG.ON@0 NOUN_CL3_ZERO ;
 
 LEXICON NOUN_CL4
 
-%<pl%>:mi NOUN_CL4_MI ;
+@P.PL.ON@:@P.PL.ON@mi NOUN_CL4_MI ;
 
 LEXICON NOUN_CL5
 
-%<sg%>:0 NOUN_CL5_ZERO ;
-%<sg%>:li NOUN_CL5_LI ;
+@P.SG.ON@:@P.SG.ON@0 NOUN_CL5_ZERO ;
+@P.SG.ON@:@P.SG.ON@li NOUN_CL5_LI ;
 
 LEXICON NOUN_CL6
 
-%<pl%>:ma NOUN_CL6_MA ;
-%<pl%>:m NOUN_CL6_M ;
+@P.PL.ON@:@P.PL.ON@ma NOUN_CL6_MA ;
+@P.PL.ON@:@P.PL.ON@m NOUN_CL6_M ;
 
 LEXICON NOUN_CL7
 
-%<sg%>:0 NOUN_CL7_ZERO ;
-%<sg%>:y NOUN_CL7_Y ;
+@P.SG.ON@:@P.SG.ON@0 NOUN_CL7_ZERO ;
+@P.SG.ON@:@P.SG.ON@y NOUN_CL7_Y ;
 
 LEXICON NOUN_CL8
 
-%<pl%>:bi NOUN_CL8_BI ;
-%<pl%>:gw NOUN_CL8_GW ;
+@P.PL.ON@:@P.PL.ON@bi NOUN_CL8_BI ;
+@P.PL.ON@:@P.PL.ON@gw NOUN_CL8GW ;
 
 LEXICON NOUN_CL9
 
-%<sg%>:0 NOUN_CL9_ZERO ;
+@P.SG.ON@:@P.SG.ON@0 NOUN_CL9_ZERO ;
 
 LEXICON NOUN_CL10
 
-%<pl%>:0 NOUN_CL10_ZERO ;
+@P.PL.ON@:@P.PL.ON@ NOUN_CL10_ZERO ;
 
 LEXICON NOUN_CL13
 
-%<sg%>:hi NOUN_CL13_HI ;
+@P.SG.ON@:@P.SG.ON@hi NOUN_CL13_HI ;
 
 LEXICON NOUN_CL14
 
-%<pl%>:di NOUN_CL14_DI ;
+@P.PL.ON@:@P.PL.ON@di NOUN_CL14_DI ;
 
 
 !! LEXICON Prefixes
@@ -273,7 +314,7 @@ LEXICON NUM_ORD
 LEXICON CNJCOO
 
 %<cnjcoo%>:ni CNJCOO_NI ; ! "avec"
-%cnjcoo%>:bo CNJCOO_BO ; ! "avec (dual)"
+%<cnjcoo%>:bo CNJCOO_BO ; ! "avec (dual)"
 
 LEXICON POSS
 
@@ -438,108 +479,108 @@ LEXICON RegConnInfl
 
 LEXICON NOUN_CL1_M
 
-ut # ; ! "person"
-an # ; ! "baby"
+ut ENDLEX_POS ; ! "person"
+an ENDLEX_POS ; ! "baby"
 aange ENDLEX_POS ; ! "child"
-udaa # ; ! "woman"
-alet # ; ! "teacher"
+udaa ENDLEX_POS ; ! "woman"
+alet ENDLEX_POS ; ! "teacher"
 
 
 LEXICON NOUN_CL1_N
 
-ken # ; !
-ŋaŋ # ; !
+ken ENDLEX_POS ; !
+ŋaŋ ENDLEX_POS ; !
 
 LEXICON NOUN_CL1_ZERO
 
-ta # ; ! "tɛ"
+ta ENDLEX_POS ; ! "tɛ"
 
 
 
 LEXICON NOUN_CL2_BA
 
-ken # ; !
-ta # ; ! "tɛ"
-ti # ; ! "Bati"
+ken ENDLEX_POS ; !
+ta ENDLEX_POS ; ! "tɛ"
+ti ENDLEX_POS ; ! "Bati"
 
 LEXICON NOUN_CL2_B
 
-ut:ot # ; ! "persons"
-an:on # ; ! "babies"
-aange:oonge # ; ! "children"
-udaa:odaa # ; ! "women"
-alet # ; ! "teachers"
+ut:ot ENDLEX_POS ; ! "persons"
+an:on ENDLEX_POS ; ! "babies"
+aange:oonge ENDLEX_POS ; ! "children"
+udaa:odaa ENDLEX_POS ; ! "women"
+alet ENDLEX_POS ; ! "teachers"
 
 
 LEXICON NOUN_CL6_MA
 
-ndap # ; ! "house"
-tam # ; ! "fruit"
-see # ; ! "joy"
-sak # ; ! "dance"
-temb # ; ! "return"
-tibla # ; ! "medication"
-wanda # ; ! "bikende"
-hɔp # ; ! "parole"
+ndap ENDLEX_POS ; ! "house"
+tam ENDLEX_POS ; ! "fruit"
+see ENDLEX_POS ; ! "joy"
+sak ENDLEX_POS ; ! "dance"
+temb ENDLEX_POS ; ! "return"
+tibla ENDLEX_POS ; ! "medication"
+wanda ENDLEX_POS ; ! "bikende"
+hɔp ENDLEX_POS ; ! "parole"
 
 LEXICON NOUN_CL6_ZERO
 
-hɔp # ; ! "parole"
+hɔp ENDLEX_POS ; ! "parole"
 
 LEXICON NOUN_CL7_ZERO
 
-jek # ; ! "food"
-joŋ # ; ! "stupidity"
-toŋ # ; ! "palm-nut"
-tamb # ; ! "choose"
-tek # ; ! "ground"
+jek ENDLEX_POS ; ! "food"
+joŋ ENDLEX_POS ; ! "stupidity"
+toŋ ENDLEX_POS ; ! "palm-nut"
+tamb ENDLEX_POS ; ! "choose"
+tek ENDLEX_POS ; ! "ground"
 
 
 LEXICON NUM_JOM
 
-jom # ; ! "dix"
+jom ENDLEX_POS ; ! "dix"
 
 LEXICON NUM_JWEM
 
-jwem # ; ! "huit"
+jwem ENDLEX_POS ; ! "huit"
 
 LEXICON NUM_BO
 
-bo # ; ! "neuf"
+bo ENDLEX_POS ; ! "neuf"
 
 LEXICON NOUN_CL8_BI
 
-jɛk # ; ! "food"
-joŋ # ; ! "stupidity"
-toŋ # ; ! "palm-nut"
-tamb # ; ! "choose"
-tek # ; ! "ground"
-ba # ; ! "deux"
-aa # ; ! "trois"
-na # ; ! "quatre"
-tan # ; ! "cinq"
-samal # ; ! "six"
-sambɔk # ; ! "sept"
+jɛk ENDLEX_POS ; ! "food"
+joŋ ENDLEX_POS ; ! "stupidity"
+toŋ ENDLEX_POS ; ! "palm-nut"
+tamb ENDLEX_POS ; ! "choose"
+tek ENDLEX_POS ; ! "ground"
+ba ENDLEX_POS ; ! "deux"
+aa ENDLEX_POS ; ! "trois"
+na ENDLEX_POS ; ! "quatre"
+tan ENDLEX_POS ; ! "cinq"
+samal ENDLEX_POS ; ! "six"
+sambɔk ENDLEX_POS ; ! "sept"
 
 LEXICON NOUN_CL13_HI
 
-nuni # ; ! "bird"
-tam # ; ! "kidney"
-send # ; ! "squirrel"
+nuni ENDLEX_POS ; ! "bird"
+tam ENDLEX_POS ; ! "kidney"
+send ENDLEX_POS ; ! "squirrel"
 
 LEXICON NOUN_CL14_DI
 
-nuni # ; ! "birds"
-tam # ; ! "kidneys"
-send # ; ! "squirrels"
+nuni ENDLEX_POS ; ! "birds"
+tam ENDLEX_POS ; ! "kidneys"
+send ENDLEX_POS ; ! "squirrels"
 
 LEXICON NounRoot10
 
-wanda # ; ! "kikende"
+wanda ENDLEX_POS ; ! "kikende"
 
 LEXICON NounRoot11
 
-ŋaŋ # ; ! "paroles"
+ŋaŋ ENDLEX_POS ; ! "paroles"
 
 LEXICON VerbRoot1
 
@@ -633,3 +674,4 @@ ap # ; ! "morphème du possessif à la troisième personne du pluriel de la clas
 ! https://github.com/hfst/
 ! http://www.cis.upenn.edu/~cis639/docs/lexc.html
 ! http://wiki.apertium.org/wiki/Hfst
+! vim: set ft=xfst-lexc:
