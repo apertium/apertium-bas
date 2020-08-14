@@ -621,14 +621,14 @@ i # ; ! "marqueur d'appartenance en classe 7"
 LEXICON CONN_CL8_BI
 
 bi # ; ! "marqueur d'appartenance en classe 8"
-
-LEXICON CONN_CL9_ZERO
-
-0 # ; ! "marqueur d'appartenance en classe 9"
-
-LEXICON CONN_CL10_ZERO
-
-0 # ; ! "marqueur d'appartenance en classe 10"
+! lines 624 to 631 have been disabled. A member of the Kiwi IRC chat group has suggested to remove them
+! LEXICON CONN_CL9_ZERO
+!
+! 0 # ; ! "marqueur d'appartenance en classe 9"
+!
+! LEXICON CONN_CL10_ZERO
+!
+! 0 # ; ! "marqueur d'appartenance en classe 10"
 
 LEXICON CONN_CL13_HI
 
