@@ -56,7 +56,7 @@ Multichar_Symbols
 %<n%> %<cl14%> ! Marqueur de classe 14
 
 ! Other symbols
-%>      ! Limite de morphème
+! %>      Limite de morphème
 
 !! to move tags at the end
 
