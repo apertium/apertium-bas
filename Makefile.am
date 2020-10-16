@@ -6,7 +6,8 @@ RELEASE=0.1
 VERSION=0.1.0
 LANG1=bas
 VAR1=AGLC
-VAR2=Miss
+VAR2=MC
+VAR3=MP
 BASENAME=apertium-$(LANG1)
 
 TARGETS_COMMON =			\
@@ -15,6 +16,7 @@ TARGETS_COMMON =			\
 	$(LANG1).automorf.att.gz	\
 	$(LANG1).autogen.hfst		\
 	$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).autoconv.hfst		\
+	$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).autoconv.hfst		\
 	$(LANG1).autogen.bin		\
 	$(LANG1).autogen.att.gz		\
 	$(LANG1).autopgen.bin		\
@@ -87,6 +89,17 @@ $(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)
 
 .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).phon.hfst: $(BASENAME).$(LANG1)_$(VAR2).phon
 	hfst-lexc $< -o $@
+
+$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).conv.hfst
+	hfst-fst2fst -w $< -o $@
+	
+.deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).conv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).phon.hfst .deps/$(LANG1).spellrelax.hfst
+	hfst-invert .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).phon.hfst | hfst-compose -1 - -2 .deps/bas.spellrelax.hfst | hfst-invert -o $@
+
+.deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).phon.hfst: $(BASENAME).$(LANG1)_$(VAR3).phon
+	hfst-lexc $< -o $@
+
+
 
 ###############################################################################
 ## Debugging transducers (for testvoc)

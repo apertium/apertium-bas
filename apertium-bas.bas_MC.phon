@@ -32,29 +32,29 @@ LEXICON Vow
 
 a:a      Tone ; 
 e:e      Tone ; 
-ɛ:e      Tone ; 
+ɛ:è      Tone ; 
 i:i      Tone ; 
 ı:i      Tone ;
 o:o      Tone ; 
-ɔ:o      Tone ; 
+ɔ:ò      Tone ; 
 u:u      Tone ; 
 
 LEXICON Graph
 
 b:b      Loop ; ! 6862
-c:c      Loop ; ! 559
+c:tj     Loop ; ! 559
 d:d      Loop ; ! 5938
 f:f      Loop ; ! 92
 g:g      Loop ; ! 7613
 h:h      Loop ; ! 5757
-j:j      Loop ; ! 2220
+j:dj     Loop ; ! 2220
 k:k      Loop ; ! 8187
 l:l      Loop ; ! 12152
 p:p      Loop ; ! 3514
 q:q      Loop ; ! 1
 r:r      Loop ; ! 249
 s:s      Loop ; ! 5117
-t:t      Loop ; ! 5660
+t:tj     Loop ; ! 5660
 v:v      Loop ; ! 41
 w:w      Loop ; ! 3692
 x:x      Loop ; ! 4
@@ -65,7 +65,7 @@ z:z      Loop ; ! 15
 
 m:m      Tone ; ! 15426
 n:n      Tone ; ! 18821
-ŋ:ñ      Tone ; ! 10445
+ŋ:ṅ      Tone ; ! 10445
 
 ü:ü      Loop ; 
 ä:ä      Loop ; 
