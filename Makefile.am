@@ -109,7 +109,7 @@ $(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)
 # Official
 
 .deps/$(LANG1).surface.weights.hfst: corpus/$(LANG1).surface.weights
-	hfst-strings2fst -j $< -o $@
+	hfst-strings2fst -j $< | hfst-minimise -o $@
 
 $(LANG1)_MCP-$(LANG1)_$(VAR1).autoconv.hfst: .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).conv.hfst .deps/$(LANG1).surface.weights.hfst
 	hfst-reweight -a 1.5 -e .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).conv.hfst -o .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).reweighted.hfst
