@@ -17,6 +17,7 @@ TARGETS_COMMON =			\
 	$(LANG1).autogen.hfst		\
 	$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).autoconv.hfst		\
 	$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).autoconv.hfst		\
+	$(LANG1)_MCP-$(LANG1)_$(VAR1).autoconv.hfst		\
 	$(LANG1).autogen.bin		\
 	$(LANG1).autogen.att.gz		\
 	$(LANG1).autopgen.bin		\
@@ -79,8 +80,13 @@ $(LANG1).autopgen.bin: $(BASENAME).post-$(LANG1).dix
 ###############################################################################
 
 .deps/$(LANG1).spellrelax.hfst: $(BASENAME).$(LANG1).spellrelax
-	hfst-regexp2fst -S -o .deps/bas.spellrelax.hfst < apertium-bas.bas.spellrelax
+	hfst-regexp2fst -S -o $@ < apertium-bas.bas.spellrelax
 
+.deps/$(LANG1)_$(VAR1).spellrelax.hfst: $(BASENAME).$(LANG1)_$(VAR1).spellrelax
+	hfst-regexp2fst -S -o $@ < apertium-bas.bas.spellrelax
+
+
+# Catholic 
 $(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).conv.hfst
 	hfst-fst2fst -w $< -o $@
 	
@@ -90,6 +96,7 @@ $(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)
 .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).phon.hfst: $(BASENAME).$(LANG1)_$(VAR2).phon
 	hfst-lexc $< -o $@
 
+# Protestant
 $(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).conv.hfst
 	hfst-fst2fst -w $< -o $@
 	
@@ -98,6 +105,26 @@ $(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)
 
 .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).phon.hfst: $(BASENAME).$(LANG1)_$(VAR3).phon
 	hfst-lexc $< -o $@
+
+# Official
+
+.deps/$(LANG1).surface.weights.hfst: corpus/$(LANG1).surface.weights
+	hfst-strings2fst -j $< -o $@
+
+$(LANG1)_MCP-$(LANG1)_$(VAR1).autoconv.hfst: .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).conv.hfst .deps/$(LANG1).surface.weights.hfst
+	hfst-reweight -a 1.5 -e .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).conv.hfst -o .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).reweighted.hfst
+	hfst-compose -1 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).conv.hfst -2 .deps/$(LANG1).surface.weights.hfst -o .deps/$(LANG1).conv.weights.hfst
+	hfst-subtract -1 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).reweighted.hfst -2 .deps/$(LANG1).conv.weights.hfst -o .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).complement.hfst
+	hfst-union -1 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).complement.hfst -2 .deps/$(LANG1).conv.weights.hfst -o .deps/$(LANG1).surface.weighted.hfst
+	hfst-fst2fst -w .deps/$(LANG1).surface.weighted.hfst -o $@
+	
+.deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).conv.hfst: .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).phon.hfst .deps/$(LANG1)_$(VAR1).spellrelax.hfst
+	hfst-compose -1 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).phon.hfst -2 .deps/$(LANG1)_$(VAR1).spellrelax.hfst -o $@
+#	hfst-invert .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).phon.hfst | hfst-compose -1 - -2 .deps/bas.spellrelax.hfst | hfst-invert -o $@
+
+.deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).phon.hfst: $(BASENAME).$(LANG1)_$(VAR1).phon
+	hfst-lexc $< -o $@
+
 
 
 

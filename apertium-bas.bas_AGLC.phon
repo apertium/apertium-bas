@@ -1,0 +1,82 @@
+Multichar_Symbols 
+
+%{ˇ%} %{´%} %{^%} %{`%} %{¯%}
+
+LEXICON Root
+
+Graph ;
+Vow ;
+
+LEXICON Loop
+
+         Graph ;
+         Vow ;
+         # ;
+
+LEXICON Tone
+
+:%{ˇ%}   Loop ; ! 
+:%{´%}   Loop ; ! 
+:%{^%}   Loop ; ! 
+:%{`%}   Loop ; ! 
+:%{¯%}   Loop ; ! 
+         Loop ; !
+
+LEXICON Vow
+
+a:a      Tone ; 
+e:e      Tone ; 
+è:ɛ      Tone ; 
+e:ɛ      Tone ; 
+é:e      Tone ; 
+i:i      Tone ; 
+ô:o      Tone ; 
+o:o      Tone ; 
+ò:ɔ      Tone ; 
+o:ɔ      Tone ; 
+u:u      Tone ; 
+
+LEXICON Graph
+
+b:b      Loop ; ! 6862
+tj:c     Loop ; ! 559
+d:d      Loop ; ! 5938
+f:f      Loop ; ! 92
+g:g      Loop ; ! 7613
+h:h      Loop ; ! 5757
+dj:j     Loop ; ! 2220
+k:k      Loop ; ! 8187
+l:l      Loop ; ! 12152
+p:p      Loop ; ! 3514
+q:q      Loop ; ! 1
+r:r      Loop ; ! 249
+s:s      Loop ; ! 5117
+tj:t     Loop ; ! 5660
+t:t      Loop ; ! 5660
+v:v      Loop ; ! 41
+w:w      Loop ; ! 3692
+x:x      Loop ; ! 4
+y:y      Loop ; ! 7001
+z:z      Loop ; ! 15
+
+b:ɓ      Loop ; ! 7474
+
+m:m      Tone ; ! 15426
+n:n      Tone ; ! 18821
+ṅ:ŋ      Tone ; ! 10445
+ñ:ŋ      Tone ; ! 10445
+
+ü:ü      Loop ; 
+ä:ä      Loop ; 
+ö:ö      Loop ; 
+
+1:1      Loop ;
+2:2      Loop ;
+3:3      Loop ;
+4:4      Loop ;
+5:5      Loop ;
+6:6      Loop ;
+7:7      Loop ;
+8:8      Loop ;
+9:9      Loop ;
+%0:%0    Loop ;
