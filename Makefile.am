@@ -83,7 +83,7 @@ $(LANG1).autopgen.bin: $(BASENAME).post-$(LANG1).dix
 	hfst-regexp2fst -S -o $@ < apertium-bas.bas.spellrelax
 
 .deps/$(LANG1)_$(VAR1).spellrelax.hfst: $(BASENAME).$(LANG1)_$(VAR1).spellrelax
-	hfst-regexp2fst -S -o $@ < apertium-bas.bas.spellrelax
+	hfst-regexp2fst -S -o $@ < $<
 
 
 # Catholic 
