@@ -14,7 +14,7 @@
 # text[fra] = La viande se détache par la cuisse.
 1	Nùga	nùga	NOUN	_	NounClass=7|Number=Sing	_	_	_	Gloss=viande
 2	i	i	DET	_	_	_	_	_	Gloss=ce
-3	ńyùgnɛ	yùgnɛ̀	VERB	_	_	_	_	_	Gloss=se.détacher
+3	ńyùgnɛ	yùgnɛ̀	VERB	_	Tense=Pres	_	_	_	Gloss=se.détacher
 4	i	i	DET	_	_	_	_	_	Gloss=ce
 5	ɓɛ̀l	ɓɛ̀l	NOUN	_	NounClass=?|Number=Sing	_	_	_	Gloss=cuisse
 6	.	.	PUNCT	_	_	_	_	_	Gloss=.
@@ -24,16 +24,16 @@
 # text[fra] = Pourquoi as-tu abandonné ton enfant?
 1	Inyǔkı̄i	inyùukı̄	ADV	_	PronType=Int	_	_	_	Gloss=porquoi
 2	ù	ù	PRON	_	Number=Sing|Person=2|PronType=Prs	_	_	_	Gloss=tu
-3	ǹyuyuu	yùyùù	VERB	_	_	_	_	_	Gloss=abandonner
+3	ǹyuyuu	yùyùù	VERB	_	Tense=Past	_	_	_	Gloss=abandonner
 4	man	mǎn	NOUN	_	NounClass=1|Number=Sing	_	_	_	Gloss=enfant
-5	wɔ̀ŋ	wɔŋ	PRON	_	_	_	_	_	Gloss=ton
+5	wɔ̀ŋ	wɔŋ	DET	_	NounClass=1|Number[psor]=Sing|Person[psor]=2	_	_	_	Gloss=ton
 6	?	?	PUNCT	_	_	_	_	_	Gloss=?
 
 # sent_id = dico:4
 # text = Mɛ̀ yè lɛ mɛ̀ ɓɔl nyɔɔ̄ nı̀ màkòò.
 # text[fra] = Je suis capable d’y aller à pied.
 1	Mɛ̀	mɛ̀	PRON	_	Number=Sing|Person=1|PronType=Prs	_	_	_	Gloss=je
-2	yè	ɓa	AUX	_	Tense=Prs	_	_	_	Gloss=suis
+2	yè	ɓa	AUX	_	Tense=Pres	_	_	_	Gloss=suis
 3	lɛ	lɛ	SCONJ	_	_	_	_	_	Gloss=que
 4	mɛ̀	mɛ̀	PRON	_	Number=Sing|Person=1|PronType=Prs	_	_	_	Gloss=je
 5	ɓɔl	ɓɔl	VERB	_	_	_	_	_	Gloss=arriver
