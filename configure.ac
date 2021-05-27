@@ -1,6 +1,6 @@
 AC_PREREQ(2.52)
 
-AC_INIT([Apertium Basaa], [0.1.0], [tommi.antero.pirinen@uni-hamburg.de], [apertium-bas], [http://wiki.apertium.org/wiki/Apertium-bas])
+AC_INIT([Apertium Basaa], [0.1.0], [tommi.antero.pirinen@uni-hamburg.de], [apertium-bas], [https://wiki.apertium.org/wiki/Apertium-bas])
 AM_INIT_AUTOMAKE
 
 AC_PROG_LN_S
