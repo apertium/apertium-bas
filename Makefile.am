@@ -2,8 +2,6 @@
 ## Makefile for apertium-bas
 ###############################################################################
 
-RELEASE=0.1
-VERSION=0.1.0
 LANG1=bas
 VAR1=AGLC
 VAR2=MC
@@ -89,7 +87,7 @@ $(LANG1).autopgen.bin: $(BASENAME).post-$(LANG1).dix
 # Catholic 
 $(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).conv.hfst
 	hfst-fst2fst -w $< -o $@
-	
+
 .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).conv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).phon.hfst .deps/$(LANG1).spellrelax.hfst
 	hfst-invert .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).phon.hfst | hfst-compose -1 - -2 .deps/bas.spellrelax.hfst | hfst-invert -o $@
 
@@ -99,7 +97,7 @@ $(LANG1)_$(VAR1)-$(LANG1)_$(VAR2).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)
 # Protestant
 $(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).autoconv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).conv.hfst
 	hfst-fst2fst -w $< -o $@
-	
+
 .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).conv.hfst: .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).phon.hfst .deps/$(LANG1).spellrelax.hfst
 	hfst-invert .deps/$(LANG1)_$(VAR1)-$(LANG1)_$(VAR3).phon.hfst | hfst-compose -1 - -2 .deps/bas.spellrelax.hfst | hfst-invert -o $@
 
@@ -117,7 +115,7 @@ $(LANG1)_MCP-$(LANG1)_$(VAR1).autoconv.hfst: .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1)
 	hfst-subtract -1 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).reweighted.hfst -2 .deps/$(LANG1).conv.weights.hfst -o .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).complement.hfst
 	hfst-union -1 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).complement.hfst -2 .deps/$(LANG1).conv.weights.hfst -o .deps/$(LANG1).surface.weighted.hfst
 	hfst-fst2fst -w .deps/$(LANG1).surface.weighted.hfst -o $@
-	
+
 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).conv.hfst: .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).phon.hfst .deps/$(LANG1)_$(VAR1).spellrelax.hfst
 	hfst-compose -1 .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).phon.hfst -2 .deps/$(LANG1)_$(VAR1).spellrelax.hfst -o $@
 #	hfst-invert .deps/$(LANG1)_MCP-$(LANG1)_$(VAR1).phon.hfst | hfst-compose -1 - -2 .deps/bas.spellrelax.hfst | hfst-invert -o $@
@@ -213,7 +211,9 @@ if HAVE_HFSTOSPELL
 EXTRA_TARGETS += $(LANG1).zhfst
 endif # HAVE_HFSTOSPELL
 
-apertium_bas_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS)
+apertium_bas_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS) \
+	$(BASENAME).$(LANG1).lexc $(BASENAME).$(LANG1).twol \
+	$(BASENAME).$(LANG1).rlx $(BASENAME).post-$(LANG1).dix
 
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
@@ -221,11 +221,6 @@ pkgconfig_DATA = $(BASENAME).pc
 noinst_DATA=modes/$(LANG1)-morph.mode
 
 install-data-local: install-modes
-	test -d $(DESTDIR)$(apertium_bas_srcdir) || mkdir -p $(DESTDIR)$(apertium_bas_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).lexc $(DESTDIR)$(apertium_bas_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).twol $(DESTDIR)$(apertium_bas_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_bas_srcdir)
-	$(INSTALL_DATA) $(BASENAME).post-$(LANG1).dix $(DESTDIR)$(apertium_bas_srcdir)
 
 ###############################################################################
 ## Cleanup
